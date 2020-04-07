@@ -7,7 +7,8 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+{{--        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">--}}
+        <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -80,7 +81,7 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <div class="title m-b-md text-danger">
                     Laravel
                 </div>
 
