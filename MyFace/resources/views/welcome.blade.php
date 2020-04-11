@@ -64,7 +64,7 @@
             }
         </style>
     </head>
-    <body>
+    <body style="background:url({{ asset('images/girl.jpg') }}) center no-repeat;">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -82,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md text-danger">
-                    Laravel
+                    MyFacesadass
                 </div>
 
                 <div class="links">
