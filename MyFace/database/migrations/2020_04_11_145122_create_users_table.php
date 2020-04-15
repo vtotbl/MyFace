@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->bigInteger('sex_id');
             $table->date('date_birth')->nullable();
-            $table->date('premium_stop_date')->nullable();
+            $table->timestamp('premium_stop_date')->nullable();
             $table->bigInteger('group_id');
             $table->boolean('is_banned');
             $table->rememberToken();

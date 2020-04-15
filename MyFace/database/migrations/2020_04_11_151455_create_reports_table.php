@@ -18,7 +18,7 @@ class CreateReportsTable extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('photo_id');
             $table->bigInteger('cause_id');
-            $table->date('created_at');
+            $table->timestamp('created_at');
         });
     }
 

@@ -1,11 +1,32 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Carbon;
 
+/**
+ * Сущность для пользователя
+ *
+ * Class User
+ * @package App\Models
+ *
+ * @property int $id
+ * @property string $login
+ * @property string $email
+ * @property Carbon $email_verified_at
+ * @property string $password
+ * @property int $sex_id
+ * @property Carbon $date_birth
+ * @property Carbon $premium_stop_date
+ * @property int $group_id
+ * @property bool $is_banned
+ * @property string $remember_token
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ */
 class User extends Authenticatable
 {
     use Notifiable;
@@ -16,7 +37,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'login',
+        'email',
+        'password',
     ];
 
     /**
@@ -25,15 +48,20 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
-     * The attributes that should be cast to native types.
+     * Атрибуты, которые должны быть преобразованы к датам.
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'premium_stop_date',
+        'date_birth',
+        'email_verified_at',
     ];
 }

@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Сущность для пользователя
+ * Сущность для соответствий пола и пользователя
  *
- * Class SexViews
+ * Class SexView
  * @package App\Models
  *
  * @property int $id
- * @property int $userId
- * @property int $sexId
+ * @property int $user_id
+ * @property int $sex_id
  */
-class SexViews extends Model
+class SexView extends Model
 {
     /**
      * The attributes that are mass assignable.
