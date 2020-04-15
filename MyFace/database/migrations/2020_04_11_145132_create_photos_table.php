@@ -17,7 +17,7 @@ class CreatePhotosTable extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->string('path')->unique();
-            $table->date('uploaded_at');
+            $table->timestamp('uploaded_at');
             $table->boolean('is_active');
         });
     }

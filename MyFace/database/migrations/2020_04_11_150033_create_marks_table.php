@@ -18,7 +18,7 @@ class CreateMarksTable extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('photo_id');
             $table->integer('mark');
-            $table->date('created_at');
+            $table->timestamp('created_at');
         });
     }
 
