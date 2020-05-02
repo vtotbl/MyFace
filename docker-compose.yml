@@ -12,7 +12,8 @@ services:
       - php
 
   php:
-    image: php:7.4-fpm
+    #image: php:7.4-fpm
+    build: ./build/docker/php
     volumes:
       - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
 

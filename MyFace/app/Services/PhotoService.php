@@ -9,11 +9,21 @@ namespace App\Services;
  */
 class PhotoService
 {
-    public function download($url, $name){
-        $path = __DIR__.'/download/' . $name . 'j.pg';
-        $file_path = fopen($path,'w');
+    /**
+     * Метод для скачивания фотографий по url
+     * @param string $url ссылка на фото
+     * @param string $name имя фотографии
+     * @param string $path путь к папке для сохранения
+     *
+     * @return array
+     */
+    public function download(string $url, string $name, string $path): array
+    {
+//        $path = __DIR__.'/download/' . $name . '.jpg';
+        $path = $path . '/' . $name . '.jpg';
+        $filePath = fopen($path,'w');
         $client = new \GuzzleHttp\Client();
-        $response = $client->get($url, ['save_to' => $file_path]);
+        $response = $client->get($url, ['save_to' => $filePath]);
 
         return ['response_code'=>$response->getStatusCode(), 'name' => $name];
     }
